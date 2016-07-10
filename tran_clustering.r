@@ -32,9 +32,12 @@ for(m in 1:length(tran_cluster_list))
 {
   acc <- tran_cluster_list[[m]][,3]
   bal <- tran_cluster_list[[m]][,7]
+  c <- tran_cluster_list[[m]][,8]
   temp1 <- aggregate(bal,list(acc),mean)#meansdf
   temp2 <- aggregate(bal,list(acc),length)#countdf
-  temp3 <- cbind(temp1,temp2)
-  temp3 <- temp3[,-3]
-  tran_cluster_list_agg[[m]] <- temp3
+  temp3 <- aggregate(c,list(acc),mean)#nth cluster
+  temp4 <- cbind(temp1,temp2,temp3)
+  temp4 <- temp4[,-3]
+  temp4 <- temp4[,-4]
+  tran_cluster_list_agg[[m]] <- temp4
 }

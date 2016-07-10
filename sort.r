@@ -17,7 +17,7 @@ for( l in 1:length(tran_cluster_list_agg))
 tran_cluster_means <- data.frame(cluster=integer(0),means=numeric(0))
 for( n in 1:length(tran_cluster_list_agg))
 {
-  tran_cluster_means[n,1]  <- n
+  tran_cluster_means[n,1] <- n
   tran_cluster_means[n,2] <- sum(tran_cluster_list_agg[[n]]$x)/length(tran_cluster_list_agg[[n]]$x)
 }
 

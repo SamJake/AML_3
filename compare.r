@@ -11,7 +11,7 @@ for(x in 1:(length(kyc_cluster_list_ord)-1))#x=#clusters-1 --2
         n <- n+1
         print(paste(kyc_cluster_list_ord[[x]][y,1],"-", tran_cluster_list_agg_ord[[x+1]][z,1]))
         flag[n,1] <- tran_cluster_list_agg_ord[[x+1]][z,1]
-        flag[n,2] <- x+1
+        flag[n,2] <- tran_cluster_list_agg_ord[[x+1]][z,4]
       }
     }
   }
